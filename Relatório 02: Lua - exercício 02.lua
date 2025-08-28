@@ -1,22 +1,16 @@
-function maiorvalor(tabela)
-    local maior = tabela[1]
-    for i = 2, #tabela do
-        if tabela[i] > maior then
-            maior = tabela[i]
-        end
-    end
-    return maior
-end
-
-print("Digite a quantidade de números na tabela:")
+local vetortabela = {}
+print("Digite a quantidade de números que deseja inserir na tabela: ")
 local n = tonumber(io.read())
-
-local numeros = {}
+local maiornum
 
 for i = 1, n do
-    print("Digite o número " .. i .. ":")
-    numeros[i] = tonumber(io.read())
+    vetortabela[i] = tonumber(io.read())
+    if i == 1 then
+        maiornum = vetortabela[i]
+  end
+  if vetortabela[i] > maiornum then
+      maiornum = vetortabela[i]
+  end
 end
 
-local max = maiorvalor(numeros)
-print("O maior valor encontrado na tabela é: " .. max)
+print("O maior número encontrado na tabela foi: " .. maiornum)
