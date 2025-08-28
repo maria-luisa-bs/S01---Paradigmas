@@ -1,29 +1,27 @@
-function calculadora(a, b, operador)
-    if operador == "+" then
-        return a + b
-    elseif operador == "-" then
-        return a - b
-    elseif operador == "*" then
-        return a * b
-    elseif operador == "/" then
-        if b == 0 then
-            return "Divisão por zero, não é possível realizar a operação"
-        else
-            return a / b
-        end
-    else
-        return "Operador inválido"
+function calculadora(a, b, op)
+  if op == "+" then
+    return a + b
+  elseif op == "-" then
+    return a - b
+    elseif op == "*" then
+      return a * b
+    elseif op == "/" then
+      return a / b
+  else
+    print("Operação inválida")
     end
+  end
+
+print("Digite o primeiro número: ")
+local num1 = tonumber(io.read())
+print("Digite o segundo número: ")
+local num2 = tonumber(io.read())
+print("Digite a operação desejada (+, -, *, /): ")
+local operador = io.read()
+
+local resultado = calculadora(num1, num2, operador)
+if resultado == nil then
+else
+print ("Resultado: ")
+print(resultado)
 end
-
-print("Digite o primeiro número:")
-local numero1 = tonumber(io.read())
-
-print("Digite o segundo número:")
-local numero2 = tonumber(io.read())
-
-print("Digite o operador (+, -, * ou /):")
-local operacao = io.read()
-
-local resultado = calculadora(numero1, numero2, operacao)
-print("Resultado: " .. tostring(resultado))
