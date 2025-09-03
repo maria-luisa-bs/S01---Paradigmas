@@ -1,66 +1,71 @@
 use std::io;
 
-fn eh_par(numero: i32) -> bool 
-{
-    numero % 2 == 0
+fn eh_par(numero: i32) -> bool
+  {
+  if numero % 2 == 0
+  {
+    return true;
+  } 
+  else 
+  {
+    return false;
+  }
 }
 
-fn main()
-{
-    println!("Jogador 01 escolha entre 'par' ou 'impar':");
+fn main() 
+  {
+    println!("Jogador 01, escolha entre par ou ímpar:");
     
     let mut escolha = String::new();
     
     io::stdin()
-        .read_line(&mut escolha)
-        .expect("Falha ao ler a escolha do Jogador 01");
-    let escolha = escolha.trim().to_lowercase();
+      .read_line(&mut escolha)
+      .expect("Falha ao ler entrada");
+    let escolha = escolha.trim();
 
+   println!("Jogador 01, escolha um numero:");
     
-    println!("Jogador 01 digite o número que escolheu:");
+   let mut num1 = String::new();
     
-    let mut entrada = String::new();
-    
-    io::stdin()
-        .read_line(&mut entrada)
-        .expect("Falha ao ler o número do Jogador 01");
-    let num1: i32 = entrada.trim().parse().expect("Jogador 01, digite um número válido");
+   io::stdin()
+    .read_line(&mut num1)
+    .expect("Falha ao ler entrada");
 
-    println!("Jogador 02 digite o número que escolheu:");
-    
-    let mut entrada = String::new();
-    
-    io::stdin()
-        .read_line(&mut entrada)
-        .expect("Falha ao ler o número do Jogador 02");
-    let num2: i32 = entrada.trim().parse().expect("Jogador 02, digite um número válido");
+  let num1: i32 = num1
+    .trim()
+    .parse()
+    .expect("Por favor, digite um número válido");
 
-    let soma = num1 + num2;
-    println!("A soma dos números escolhidos é igual a {}", soma);
+  println!("Jogador 02, escolha um numero:");
+    
+  let mut num2 = String::new();
+  io::stdin()
+    .read_line(&mut num2)
+    .expect("Falha ao ler entrada");
 
-   
-    if eh_par(soma)
-    {
-        println!("O resultado da soma é par");
-        if escolha == "par" 
-        {
-            println!("Vencedor é o Jogador 01");
-        } 
-        else 
-        {
-            println!("Vencedor é o Jodador 02");
-        }
-    }
-    else
-    {
-        println!("O resultado da soma é ímpar");
-        if escolha == "impar" 
-        {
-            println!("Vencedor é o Jogador 01");
-        } 
-        else 
-        {
-            println!("Vencedor é o Jodador 02");
-        }
-    }
+   let num2: i32 = num2
+    .trim()
+    .parse()
+    .expect("Por favor, digite um número válido");
+
+  let soma = num1 + num2;
+
+  println!("A soma é: {}", soma);
+    
+  if eh_par(soma) == true && escolha == "par" 
+  {
+    println!("O vencedor é o Jogador 01!");
+  }
+  else if eh_par(soma) == false && escolha == "impar" 
+  {
+    println!("O vencedor é o Jogador 01!");
+  }
+  else if eh_par(soma) == false && escolha == "par"
+  {
+    println!("O vencedor é o Jogador 02!");
+  }
+  else if eh_par(soma) == true && escolha == "impar"
+  {
+    println!("O vencedor é o Jogador 02!");
+  }
 }
