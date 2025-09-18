@@ -20,7 +20,7 @@ int main()
 
         while (nota < 0 || nota > 10) 
 		{
-            cout << "Nota invalida! Digite novamente (0 a 10): ";
+            cout << "Nota invalida, digite novamente (0 a 10): ";
             cin >> nota;
         }
 
@@ -31,11 +31,11 @@ int main()
 
     if (media >= 7) 
 	{
-        cout << "Aluno Aprovado!" << endl;
+        cout << "Aprovado" << endl;
     } 
 	else 
 	{
-        cout << "Aluno Reprovado!" << endl;
+        cout << "Reprovado" << endl;
     }
     
     cout << "Media final = " << media << endl;
