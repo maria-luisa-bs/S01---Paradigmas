@@ -14,7 +14,7 @@ class Pokemon
 
     receberDano(dano)
   {
-        console.log(`${this.nome} foi atacado ${dano} recebeu de dano!`);
+        console.log(`${this.nome} foi atacado ${dano} de dano!`);
   }
 
     atacar()
