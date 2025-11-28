@@ -8,6 +8,6 @@ divindade_olimpica(Deus) :-
 
  divindade_olimpica(X).
 
-X = zeus ;
-X = poseidon ;
-X = hades.
+X = Zeus ;
+X = Poseidon ;
+X = Hades.
